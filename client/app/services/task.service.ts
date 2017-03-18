@@ -9,7 +9,7 @@ export class TaskService{
 	}
 
 	getTasks(){
-		return this.http.get('http://139.59.105.152:3000/api/tasks')
+		return this.http.get('http://139.59.105.152/api/tasks')
 			.map(res => res.json());
 	} 
 
@@ -18,12 +18,12 @@ export class TaskService{
 		headers.append('Content-Type', 'application/json');
 		console.log(newTask);
 		console.log(JSON.stringify(newTask));
-		return this.http.post('http://139.59.105.152:3000/api/task', JSON.stringify(newTask), {headers: headers})
+		return this.http.post('http://139.59.105.152/api/task', JSON.stringify(newTask), {headers: headers})
 			.map(res => res.json());
 	}
 
 	deleteTask(id){
-		return this.http.delete('http://139.59.105.152:3000/api/task/' + id)
+		return this.http.delete('http://139.59.105.152/api/task/' + id)
 			.map(res => res.json());
 	}
 
@@ -32,7 +32,7 @@ export class TaskService{
 		headers.append('Content-Type', 'application/json');
 		console.log(task);
 		console.log(JSON.stringify(task));
-		return this.http.put('http://139.59.105.152:3000/api/task/' + task._id, JSON.stringify(task), {headers: headers})
+		return this.http.put('http://139.59.105.152/api/task/' + task._id, JSON.stringify(task), {headers: headers})
 			.map(res => res.json());
 
 	}
