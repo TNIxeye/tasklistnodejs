@@ -9,7 +9,7 @@ export class TaskService{
 	}
 
 	getTasks(){
-		return this.http.get('http://bulvier.com/api/tasks')
+		return this.http.get('http://bernaung.com/api/tasks')
 			.map(res => res.json());
 	} 
 
@@ -18,12 +18,12 @@ export class TaskService{
 		headers.append('Content-Type', 'application/json');
 		console.log(newTask);
 		console.log(JSON.stringify(newTask));
-		return this.http.post('http://bulvier.com/api/task', JSON.stringify(newTask), {headers: headers})
+		return this.http.post('http://bernaung.com/api/task', JSON.stringify(newTask), {headers: headers})
 			.map(res => res.json());
 	}
 
 	deleteTask(id){
-		return this.http.delete('http://bulvier.com/api/task/' + id)
+		return this.http.delete('http://bernaung.com/api/task/' + id)
 			.map(res => res.json());
 	}
 
@@ -32,7 +32,7 @@ export class TaskService{
 		headers.append('Content-Type', 'application/json');
 		console.log(task);
 		console.log(JSON.stringify(task));
-		return this.http.put('http://bulvier.com/api/task/' + task._id, JSON.stringify(task), {headers: headers})
+		return this.http.put('http://bernaung.com/api/task/' + task._id, JSON.stringify(task), {headers: headers})
 			.map(res => res.json());
 
 	}
