@@ -18,7 +18,7 @@ var TaskService = (function () {
         console.log('Task Service Initialize....');
     }
     TaskService.prototype.getTasks = function () {
-        return this.http.get('http://bulvier.com/api/tasks')
+        return this.http.get('http://bernaung.com/api/tasks')
             .map(function (res) { return res.json(); });
     };
     TaskService.prototype.addTask = function (newTask) {
@@ -26,11 +26,11 @@ var TaskService = (function () {
         headers.append('Content-Type', 'application/json');
         console.log(newTask);
         console.log(JSON.stringify(newTask));
-        return this.http.post('http://bulvier.com/api/task', JSON.stringify(newTask), { headers: headers })
+        return this.http.post('http://bernaung.com/api/task', JSON.stringify(newTask), { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TaskService.prototype.deleteTask = function (id) {
-        return this.http.delete('http://bulvier.com/api/task/' + id)
+        return this.http.delete('http://bernaung.com/api/task/' + id)
             .map(function (res) { return res.json(); });
     };
     TaskService.prototype.updateStatus = function (task) {
@@ -38,7 +38,7 @@ var TaskService = (function () {
         headers.append('Content-Type', 'application/json');
         console.log(task);
         console.log(JSON.stringify(task));
-        return this.http.put('http://bulvier.com/api/task/' + task._id, JSON.stringify(task), { headers: headers })
+        return this.http.put('http://bernaung.com/api/task/' + task._id, JSON.stringify(task), { headers: headers })
             .map(function (res) { return res.json(); });
     };
     return TaskService;
